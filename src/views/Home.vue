@@ -2,13 +2,15 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div class="parent">
+      <div class="child" style="height:300px;"></div>
+      <div class="child"></div>
+    </div>
+    <br />
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child" style="height:300px;"></div>
+    </div>
   </div>
 </template>
 
@@ -19,12 +21,6 @@
 export default {
   name: 'home',
   mounted() {
-    const arr = document.getElementsByTagName('li');
-    for(let i = 0; i<arr.length; i++) {
-      arr[i].onclick = function() {
-        console.log(i);
-      }
-    }
   }
   // components: {
   //   HelloWorld
@@ -32,10 +28,16 @@ export default {
 }
 </script>
 <style scoped>
-li {
-  width: 100%;
-  color: grey;
-  border: 1px solid blue;
+.parent {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+}
+.child {
+  width: 100px;
+  outline: solid 1px;
 }
 </style>
 
