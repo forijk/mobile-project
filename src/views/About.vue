@@ -7,9 +7,41 @@
     </div>
     <div class="left">left</div>
     <div class="right">right</div>
+    <div class="button orange">123</div>
   </div>
 </template>
+<script>
+
+
+export default {
+  mounted() {
+    var btn = document.querySelector(".button");
+    var h = 25;
+    setInterval(function(){
+      h ++;
+      h = h % 360;
+      btn.style.borderColor=`hsl(${h}, 95%, 45%)`
+      btn.style.background=`linear-gradient(to bottom,  hsl(${h},95%,54.1%),  hsl(${h},95%,84.1%))`
+    },100);
+  }
+}
+</script>
 <style scoped>
+.button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 2em 0.55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+  border: solid 1px;
+}
+
 .box {
   display: flex;
   flex-wrap: wrap;
